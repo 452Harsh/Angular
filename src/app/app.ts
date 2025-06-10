@@ -9,9 +9,23 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  handleEvent(event : Event) {
-    // Handle the mouse event here
-    console.log( event);
-    console.log("value" , (event.target as HTMLInputElement).value);
+  name = "";
+  displayName = "";
+  email = "";
+  getname(event:Event) {
+    this.name = (event.target as HTMLInputElement).value;
+  }
+  showName() {
+   this.displayName = this.name ;
+  }
+  setName() {
+    this.name = "John Doe";
+  }
+  getEmail(val : string) {
+    console.log(val);
+    this.email = val;
+  }
+  setEmail() {
+    this.email = "default";
   }
 }
