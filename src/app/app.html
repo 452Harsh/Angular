@@ -1,9 +1,18 @@
-<h1>Conter App</h1>
-<div style="text-align: center; ">
-  <h2 class="count">{{count}}</h2>
-  <div>
-    <button class="btn bg-red" (click)="handleCount('decrement')">Decrement</button>
-    <button class="btn bg-black" (click)="handleCount('reset')">Reset</button>
-    <button class="btn bg-green" (click)="handleCount('increment')">Increment</button>
-  </div>
-</div>
+<h1>Event in angular</h1>
+<button (click)="handleEvent($event)">Click me</button>
+<br />
+<br />
+<div
+  (mouseenter)="handleEvent($event)"
+  style="background-color: green; width: 100px; height: 100px"
+></div>
+<div
+  (mouseleave)="handleEvent($event)"
+  style="background-color: blue; width: 100px; height: 100px"
+></div>
+
+<br />
+<br />
+<input (input)="handleEvent($event)"
+(focus)="handleEvent($event)"
+type="text" name="user">
