@@ -1,31 +1,6 @@
-<h1 style="text-align:center; font-size:2rem; color:#333; margin-bottom:1rem;">To Do List</h1>
+<h1 [style.backgroundColor]="bgColor" [style.fontSize]="fs">
+  Dyanamic Styling
+</h1>
 
-<input 
-  type="text" 
-  [(ngModel)]="task" 
-  placeholder="Enter a new task" 
-  style="width:60%; padding:10px; margin:0 auto 1rem auto; display:block; border:1px solid #ccc; border-radius:8px; font-size:1rem;"
-/>
-
-<button 
-  (click)="addTask()" 
-  style="display:block; margin:0.5rem auto 2rem auto; padding:10px 20px; background-color:#007bff; color:white; font-size:1rem; border:none; border-radius:8px; cursor:pointer;"
->
-  Add Task
-</button>
-
-@for(task of taskList; track task.id) {
-  <div style="background-color:#f9f9f9; margin:0.5rem auto; padding:1rem; width:70%; border-radius:10px; box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);">
-    
-    <div style="display:flex; gap:1rem; align-items:center;">
-      <li style="list-style:none; font-size:1rem; color:#444;">{{task.id}}</li>
-      <li style="list-style:none; font-size:1rem; color:#444;">{{task.task}}</li>
-    </div>
-    
-    <button (click)="deleteTask(task.id)"
-      style="background-color:#dc3545; padding:6px 14px; font-size:0.9rem; margin-top:0.5rem; color:white; border:none; border-radius:6px; cursor:pointer;"
-    >
-      Delete
-    </button>
-  </div>
-}
+<h1 [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall">Heading</h1>
+<button (click)="updateHeadingSize()">Toggle font</button>

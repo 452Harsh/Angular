@@ -9,15 +9,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  task ="";
-  taskList: {id:number,task:string}[] = [];
-  addTask(){
-    this.taskList.push({id:this.taskList.length + 1, task : this.task})
-    this.task = "";
-    console.log(this.taskList);
+  bgColor ="red";
+  fs = "40px";
+  headingSizeBig = "80px";
+  headingSizeSmall = "40px";
+  zoom = !true;
+  updateHeadingSize() {
+    this.zoom = !this.zoom;
   }
-  deleteTask(id:number){
-   this.taskList = this.taskList.filter((item)=> item.id != id);
-  }
-
 }
