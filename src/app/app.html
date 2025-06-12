@@ -1,6 +1,26 @@
-<h1 [style.backgroundColor]="bgColor" [style.fontSize]="fs">
-  Dyanamic Styling
-</h1>
+<h1 *ngIf="show">Directive in anhular</h1>
 
-<h1 [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall">Heading</h1>
-<button (click)="updateHeadingSize()">Toggle font</button>
+<h1>*ngfor Directive</h1>
+<ul>
+  <li *ngFor="let x of students">
+    {{x}}
+  </li>
+</ul>
+
+<div *ngIf="show; else elseBlock">
+  <h1>ngIf Directive</h1>
+  <p>Condition is true</p>
+
+</div>
+
+<ng-template #elseBlock >
+<div>
+  <h1>ngIf Directive</h1>
+  <p>Condition is false</p>
+  </div>
+
+</ng-template>
+
+<button (click)="toggleShow()">
+  toggle
+</button>
