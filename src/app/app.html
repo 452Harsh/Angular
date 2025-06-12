@@ -1,14 +1,26 @@
-<h1>Signals</h1>
-<p>{{counter()}}</p>
-<button (click)="counter.set(6)">Increase value</button>
-<button (click)="updatevalue()">Increase by 1</button>
+<h1>For loop Contextual variable</h1>
+@for(user of users; track  user) {
+  <div>
+    @if($first || $last){
+      <p style="background-color: red;">this is out {{$index+1}} user and name is {{user}}</p>
+    }
+    @else {
+      <p>this is out {{$index+1}} user and name is {{user}}</p>
+    }  
+  </div>
+}
+ @empty(){
+    <div>No record found</div>
+  }
+    
 
 
-<hr>
-<p>{{data()}}</p>
-<button (click)="updateSignal()">Update</button>
+  <hr>
+  <hr>
+  <h1>Two way Binding</h1>
+  <input [(ngModel)]="name" type="text" placeholder="Enter your name" >
+  <p>{{name}}</p>
 
-<hr>
-<h1>Computed Signal</h1>
-<p>{{z()}}</p>
-<button (click)="showValue()">Show Value</button>
+  <h2>2nd method</h2>
+  <input type="text" placeholder="Enter your name" (input)="changeName($event)" >
+  <p>{{name2}}</p>
