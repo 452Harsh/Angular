@@ -1,13 +1,14 @@
-<h1>For loop</h1>
-@for(user of users;track user){
-  <h2>{{user}}</h2>
-}
+<h1>Signals</h1>
+<p>{{counter()}}</p>
+<button (click)="counter.set(6)">Increase value</button>
+<button (click)="updatevalue()">Increase by 1</button>
+
+
 <hr>
-@for(student of studends;track student.name;let id = $index){
-  <div>
-    <p>{{id}}</p>
-  <h2>{{student.name}}</h2>
-  <p>{{student.age}}</p>
-  </div>
-  
-}
+<p>{{data()}}</p>
+<button (click)="updateSignal()">Update</button>
+
+<hr>
+<h1>Computed Signal</h1>
+<p>{{z()}}</p>
+<button (click)="showValue()">Show Value</button>
