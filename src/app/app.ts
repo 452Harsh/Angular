@@ -9,12 +9,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-users = ['Alice', 'Bob', 'Charlie','David', 'Eve'];
-name = "";
-name2 = "";
-
-changeName(event: Event) {
-  const input = event.target as HTMLInputElement;
-  this.name2 = input.value;  }
+  task ="";
+  taskList: {id:number,task:string}[] = [];
+  addTask(){
+    this.taskList.push({id:this.taskList.length + 1, task : this.task})
+    this.task = "";
+    console.log(this.taskList);
+  }
+  deleteTask(id:number){
+   this.taskList = this.taskList.filter((item)=> item.id != id);
+  }
 
 }
