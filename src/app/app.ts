@@ -9,23 +9,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  name = "";
-  displayName = "";
-  email = "";
-  getname(event:Event) {
-    this.name = (event.target as HTMLInputElement).value;
+  display = true;
+  toggle = true;
+  hide(){
+    this.display = !this.display;
   }
-  showName() {
-   this.displayName = this.name ;
-  }
-  setName() {
-    this.name = "John Doe";
-  }
-  getEmail(val : string) {
-    console.log(val);
-    this.email = val;
-  }
-  setEmail() {
-    this.email = "default";
+  twotoggle(){
+    this.toggle = !this.toggle;
   }
 }
