@@ -1,20 +1,13 @@
-<h1>If Else | control flow</h1>
-@if(display){
-  <div style="width: 200px; height: 200px; background-color: green;">
-
-</div>
+<h1>For loop</h1>
+@for(user of users;track user){
+  <h2>{{user}}</h2>
 }
-<button (click)="hide()">Hide div</button>
 <hr>
-
-@if(toggle){
-  <div style="width: 200px; height: 200px; background-color: red;">
-
-</div>
+@for(student of studends;track student.name;let id = $index){
+  <div>
+    <p>{{id}}</p>
+  <h2>{{student.name}}</h2>
+  <p>{{student.age}}</p>
+  </div>
+  
 }
-@else {
-  <div style="width: 200px; height: 200px; background-color: yellow;">
-
-</div>
-}
-<button (click) ="twotoggle()">{{toggle ? 'Show yellow div' : 'Show red div'}}</button>

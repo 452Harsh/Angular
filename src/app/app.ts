@@ -9,12 +9,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  display = true;
-  toggle = true;
-  hide(){
-    this.display = !this.display;
-  }
-  twotoggle(){
-    this.toggle = !this.toggle;
-  }
+  users = ["alice", "bob", "charlie","bruce","dave","eve","frank","grace"];
+  studends = [
+    {name: "alice", age: 20},
+    {name: "bob", age: 22},
+    {name: "charlie", age: 21},
+    {name: "bruce", age: 23},
+    {name: "dave", age: 24},
+    {name: "eve", age: 22},     
+  ]
 }
