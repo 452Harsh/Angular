@@ -1,19 +1,22 @@
-import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet,RouterLink, Router } from '@angular/router';
+import { RouterOutlet,RouterLink} from '@angular/router';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, RouterOutlet, ],
+  imports: [FormsModule, RouterOutlet ,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  constructor(private router : Router) {}
-  goToProfilePage(){
-     this.router.navigate(['profile'],{queryParams: {name: 'John Doe'}}); 
-  }
+  users = [
+    { id : 1, name: 'John Doe',age : 30},
+    { id : 2, name: 'Jane Smith', age : 25},
+    { id : 3, name: 'Alice Johnson', age : 28},
+    { id : 4, name: 'Bob Brown', age : 35},
+    { id : 5, name: 'Charlie White', age : 22}    
+  ]
 
 }

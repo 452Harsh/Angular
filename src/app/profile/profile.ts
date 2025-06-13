@@ -8,15 +8,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './profile.css'
 })
 export class Profile {
-  username : string | null = '';
-  constructor(public route : ActivatedRoute) {}
-  ngOnInit(){
-    this.route.queryParams.subscribe(params => {
-      this.username = params['name'] || 'Guest';
-    }
-    );
-
-
-  }
+  name : string | null = '';
   
+  constructor(private route: ActivatedRoute) { }
+  ngOnInit(){
+    this.route.params.subscribe((params) =>{
+      this.name = params['name'];
+    })
+  }
 }
