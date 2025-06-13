@@ -1,13 +1,5 @@
-<app-user user="peter"></app-user>
-<app-user [user]="name "></app-user>
-<select #selectedUser   (change)="onUserChange(selectedUser.value)">
-    <option value="Anil Sandhu">Anil Sandhu</option>
-    <option value="Peter">Peter</option>
-    <option value="John">John</option>
-    <option value="Jane">Jane</option>
-</select>
-
-<h1> Reuse component</h1>
-@for(user of users;track user){
-    <app-user [user]="user"></app-user>
-}
+<h1>Pass Data from the child</h1>
+<app-user (getUsers) = "handleUsers($event)"></app-user>
+@for(user of users; track user) {
+  <p>{{user}}</p>
+} 

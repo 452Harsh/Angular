@@ -1,5 +1,4 @@
 import { Component, Input} from '@angular/core';
-import {  FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { User } from "./user/user";
 @Component({
@@ -9,10 +8,10 @@ import { User } from "./user/user";
   styleUrl: './app.css'
 })
 export class App {
-  name = "harsh";
-  onUserChange(user: string) {
-    this.name = user;
-  }
-  users = ['John', 'Jane', 'Doe'];
+  users :undefined|string[];
+  handleUsers (users : string[]){
+    console.log(users);
+    this.users = users;
+  }  
 
 }
