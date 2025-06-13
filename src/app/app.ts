@@ -1,22 +1,18 @@
-import { NgIf } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import {  FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { User } from "./user/user";
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule,NgIf],
+  imports: [ReactiveFormsModule, User],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-   email = new FormControl('',[Validators.required,Validators.email]);
-   password = new FormControl('',[Validators.minLength(5),Validators.required]);
-   displayValue(){
-    console.log(this.email.value,this.password.value);
-   }
-   setValues(){
-    this.email.setValue('1@gmail.com');
-    this.password.setValue('123456');
-   }
+  name = "harsh";
+  onUserChange(user: string) {
+    this.name = user;
+  }
+  users = ['John', 'Jane', 'Doe'];
 
 }
