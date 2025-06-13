@@ -1,8 +1,16 @@
-<h1>User List</h1>
-<ul>
-  @for(user of users;track user.id){
-
-  <li><a routerLink="profile/{{user.id}}/{{user.name}}">{{user.name}}</a></li>
-  }
-</ul>
-<router-outlet></router-outlet>
+<h1>Basic Reactive form in Angular</h1>
+<form action="" method="post">
+    <input type="text" placeholder="Enter your mail" [formControl]="email">
+    <br>
+    <span *ngIf="email?.hasError('required')">Name is required</span>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter your password" [formControl]="password">
+    <br>
+    <button type="button" (click)="displayValue()">Login</button>
+    <button type="button" (click)="setValues() ">Set values</button>
+    <h2>{{email.value}}</h2>
+    <span *ngIf="password.hasError('required')">Password is required</span>
+    <span *ngIf="password?.invalid && (password?.dirty || password?.touched)">Password is invalid</span>
+    <h2>{{password.value}}</h2>
+</form>

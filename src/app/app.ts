@@ -1,22 +1,22 @@
+import { NgIf } from '@angular/common';
 import { Component} from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterOutlet,RouterLink} from '@angular/router';
-
-
-
+import {  FormControl, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, RouterOutlet ,RouterLink],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  users = [
-    { id : 1, name: 'John Doe',age : 30},
-    { id : 2, name: 'Jane Smith', age : 25},
-    { id : 3, name: 'Alice Johnson', age : 28},
-    { id : 4, name: 'Bob Brown', age : 35},
-    { id : 5, name: 'Charlie White', age : 22}    
-  ]
+   email = new FormControl('',[Validators.required,Validators.email]);
+   password = new FormControl('',[Validators.minLength(5),Validators.required]);
+   displayValue(){
+    console.log(this.email.value,this.password.value);
+   }
+   setValues(){
+    this.email.setValue('1@gmail.com');
+    this.password.setValue('123456');
+   }
 
 }
