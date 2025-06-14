@@ -1,5 +1,3 @@
-<h1>Pass Data from the child</h1>
-<app-user (getUsers) = "handleUsers($event)"></app-user>
-@for(user of users; track user) {
-  <p>{{user}}</p>
-} 
+<h1>Custom pipe angular</h1>
+<div>{{amount | currencyConvertor:12}}</div>
+<div>{{amount | currencyConvertor}}</div>

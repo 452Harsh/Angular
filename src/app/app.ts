@@ -1,17 +1,13 @@
 import { Component, Input} from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { User } from "./user/user";
+import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule, User],
+  imports: [ReactiveFormsModule,CurrencyConvertorPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  users :undefined|string[];
-  handleUsers (users : string[]){
-    console.log(users);
-    this.users = users;
-  }  
+  amount:number = 100;
 
 }
