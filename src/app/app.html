@@ -1,3 +1,9 @@
-<h1>Custom pipe angular</h1>
-<div>{{amount | currencyConvertor:12}}</div>
-<div>{{amount | currencyConvertor}}</div>
+<h1>Api Call services</h1>
+@for(product of productList;track product.id){
+    <ul>
+        <li><b>Name : </b>{{product.title}}</li>
+        <li><b>Price : </b>{{product.price}}</li>
+        <li><b>Product : </b>{{product.category}}</li>
+        <li><img src={{product.thumbnail}} alt="Product thumbnail"></li>
+    </ul>
+}

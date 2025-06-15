@@ -1,13 +1,19 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
+import { Product } from './services/product';
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule,CurrencyConvertorPipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  amount:number = 100;
-
+  productList:any;
+  constructor(private product: Product) {}
+  ngOnInit() {
+    this.product.getProductList().subscribe((data: any) => {
+      console.log(data);
+      this.productList = data.products;
+    });
+  }
 }
